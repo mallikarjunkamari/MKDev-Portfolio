@@ -1,0 +1,42 @@
+<img src="assets/jpeg/IMG_0238.JPG" alt="IMG_0238">
+
+<style>
+/* Laptop Frame Mockup */
+.project-details__showcase-img-cont {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 2rem 5rem;
+  margin: 3rem 0;
+}
+
+.project-details__showcase-img-cont::before {
+  content: '';
+  position: absolute;
+  bottom: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  max-width: 85rem;
+  height: 2rem;
+  background: linear-gradient(to bottom, #2a2a2a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  border-radius: 0 0 4rem 4rem;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3), inset 0 0.2rem 0 rgba(255, 255, 255, 0.1);
+  z-index: 10;
+}
+
+.project-details__showcase-img {
+  width: 100%;
+  max-width: 85rem;
+  height: auto;
+  display: block;
+  border: 1.5rem solid #1a1a1a;
+  border-radius: 0.6rem;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25), inset 0 0 0 0.1rem #333, 0 0 0 0.5rem #f5f5f5, 0 0 0 0.7rem #1a1a1a;
+  object-fit: cover;
+  background: #fff;
+  position: relative;
+  z-index: 5;
+}
+</style>
