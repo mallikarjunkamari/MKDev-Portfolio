@@ -28,25 +28,36 @@
     }
   }
   &__logo-img-cont {
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50px;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
     overflow: hidden;
     margin-right: 1.5rem;
-    background: $themeClrPrimary;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 
     @include respond(tab-port) {
-      width: 4.5rem;
-      height: 4.5rem;
+      width: 5rem;
+      height: 5rem;
       margin-right: 1.2rem;
+    }
+
+    @include respond(phone) {
+      width: 4rem;
+      height: 4rem;
+      margin-right: 1rem;
     }
   }
   &__logo-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     display: block;
+    border-radius: 50%;
   }
   &__logo-sub {
     font-size: 1.8rem;
