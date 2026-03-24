@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sales Savvy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .login-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .login-container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            max-width: 90rem;
+            width: 100%;
+            padding: 2rem;
+        }
+        
+        .login-form-container {
+            background: white;
+            padding: 4rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            max-width: 45rem;
+        }
+        
+        .login-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 3rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.8rem;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 1.5rem;
+            font-size: 1.6rem;
+            border: 2px solid #e1e1e1;
+            border-radius: 0.8rem;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .form-input::placeholder {
+            color: #999;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 1.8rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+            background: #2E7D32;
+            color: white;
+            border: none;
+            border-radius: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 2rem;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(46, 125, 50, 0.3);
+        }
+        
+        .signup-link {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            color: #666;
+        }
+        
+        .signup-link a {
+            color: #2E7D32;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .signup-link a:hover {
+            color: #1B5E20;
+            text-decoration: underline;
+        }
+        
+        .shopping-cart-container {
+            flex: 0 0 30rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .shopping-cart {
+            width: 20rem;
+            height: 20rem;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .shopping-cart::before {
+            content: '🛒';
+            font-size: 8rem;
+            position: relative;
+        }
+        
+        .shopping-bag {
+            position: absolute;
+            top: -2rem;
+            right: -2rem;
+            width: 6rem;
+            height: 6rem;
+            background: #ff4757;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+        }
+        
+        @media only screen and (max-width: 75em) {
+            .login-container {
+                flex-direction: column;
+                gap: 3rem;
+            }
+            
+            .shopping-cart-container {
+                order: -1;
+            }
+            
+            .login-form-container {
+                max-width: 50rem;
+            }
+        }
+        
+        @media only screen and (max-width: 56.25em) {
+            .login-form-container {
+                padding: 3rem;
+            }
+            
+            .login-title {
+                font-size: 2.5rem;
+            }
+            
+            .shopping-cart {
+                width: 15rem;
+                height: 15rem;
+            }
+            
+            .shopping-cart::before {
+                font-size: 6rem;
+            }
+        }
+        
+        @media only screen and (max-width: 37.5em) {
+            .login-form-container {
+                padding: 2rem;
+            }
+            
+            .login-title {
+                font-size: 2rem;
+            }
+            
+            .form-label {
+                font-size: 1.4rem;
+            }
+            
+            .form-input {
+                font-size: 1.4rem;
+                padding: 1.2rem;
+            }
+            
+            .login-btn {
+                font-size: 1.6rem;
+                padding: 1.5rem;
+            }
+            
+            .signup-link {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-page">
+        <div class="login-container">
+            <div class="login-form-container">
+                <h1 class="login-title">Login</h1>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label class="form-label" for="username">Username</label>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            name="username" 
+                            class="form-input" 
+                            placeholder="Enter your username"
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="password">Password</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            class="form-input" 
+                            placeholder="Enter your password"
+                            required
+                        >
+                    </div>
+                    
+                    <button type="submit" class="login-btn">Sign In</button>
+                </form>
+                
+                <div class="signup-link">
+                    New User? <a href="#">Sign up here</a>
+                </div>
+            </div>
+            
+            <div class="shopping-cart-container">
+                <div class="shopping-cart">
+                    <div class="shopping-bag">🛍️</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Basic validation
+            if (!username || !password) {
+                alert('Please enter both username and password');
+                return;
+            }
+            
+            // Here you would typically send the login request to your backend
+            console.log('Login attempt:', { username, password });
+            
+            // For demo purposes, show a success message
+            alert('Login successful! Redirecting to project page...');
+            
+            // Redirect to project page after successful login
+            setTimeout(() => {
+                window.location.href = 'project-3SalesSavvy.html';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
